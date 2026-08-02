@@ -1,0 +1,44 @@
+generated: '2026-08-01'
+method: probed
+source: live HTTPS probes of every JetZero host found in apis.yml
+host: https://www.jetzero.aero
+hits: 0
+note: JetZero publishes no /.well-known/ discovery surface. Every RFC 8615 path probed on both the apex
+  and www hosts returned 404. No WellKnown or SecurityTxt pointer is wired in apis.yml because no document
+  was found — recording the negative result so later rounds do not re-probe blind.
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /.well-known/agent-card.json
+  status: 404
+- path: /.well-known/agent.json
+  status: 404
+hosts_probed:
+- host: www.jetzero.aero
+  resolves: true
+  result: all paths 404
+- host: jetzero.aero
+  resolves: true
+  result: all paths 404
+- host: api.jetzero.aero
+  resolves: false
+  result: NXDOMAIN
+- host: developer.jetzero.aero
+  resolves: false
+  result: NXDOMAIN
+- host: docs.jetzero.aero
+  resolves: false
+  result: NXDOMAIN
+x-evidence:
+  fetched: '2026-08-01'
+  method: curl HTTPS HEAD/GET with redirects
+  dns_scan: 'api, app, portal, status, my, supplier, suppliers, data, dev, developers, graphql, mcp,
+    partners — none resolve under jetzero.aero'

@@ -1,17 +1,47 @@
 aid: jetzero
 name: JetZero
-description: 'JetZero is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'JetZero is a Long Beach, California aerospace company founded in 2021 by Tom O''Leary and
+  Mark Page to bring the blended wing body (all-wing) airframe to commercial aviation. Its flagship program
+  is the Z4, a 250-seat, international-range jetliner the company says will burn up to 50% less fuel than
+  comparable tube-and-wing airliners, and the Jet1 full-scale demonstrator being built with Scaled Composites
+  in Mojave, California ahead of a first flight targeted for 2027. JetZero broke ground in 2026 on a
+  manufacturing and final-assembly campus in Greensboro, North Carolina and is opening an engineering
+  office in Wichita, Kansas at NIAR. It is backed by the U.S. Air Force, NASA, United Airlines, Alaska
+  Star Ventures and a $175M Series B led by B Capital, with letters of intent from Gulf Air and Japan
+  Airlines. JetZero is an aircraft manufacturer, not a software or data provider: as of this profile it
+  publishes no public developer portal, no API documentation, no SDKs, and no machine-readable API contract
+  of any kind. Its public technical surface is a supplier registration and supplier standards program.'
+accessModel:
+  pricing: none
+  onboarding: none
+  trial: false
+  try_now: false
+  public: false
+  label: No Public API
+  confidence: high
+  source:
+  - https://www.jetzero.aero/
+  generated: '2026-08-01'
+  method: probed
+image: https://www.jetzero.aero/hubfs/02_LEADING_PRESS_IMAGE_2025.png
 url: https://raw.githubusercontent.com/api-evangelist/jetzero/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
+x-source-url: https://forgeglobal.com/jetzero_stock/
 x-tier: stub
-x-tier-reason: harvest
+x-tier-reason: no-public-api
 specificationVersion: '0.20'
 created: '2026-08-01'
 modified: '2026-08-01'
 tags:
 - Company
+- Aerospace
+- Aviation
+- Aircraft Manufacturing
+- Advanced Manufacturing
+- Sustainability
+- Transportation
+- Defense
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +49,33 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/jetzero-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/jetzero_stock/
+  url: https://www.jetzero.aero/
+- type: Newsroom
+  url: https://www.jetzero.aero/newsroom
+- type: Blog
+  url: https://www.jetzero.aero/newsroom
+- type: Press
+  url: https://www.jetzero.aero/media-center
+- type: Support
+  url: https://www.jetzero.aero/connect
+- type: Careers
+  url: https://job-boards.greenhouse.io/jetzero
+- type: PrivacyPolicy
+  url: https://www.jetzero.aero/privacy-policy
+- type: LinkedIn
+  url: https://www.linkedin.com/company/jetzero/
+- type: Twitter
+  url: https://x.com/JetZeroAero
+- type: LLMsTxt
+  url: llms/jetzero-llms.txt
+x-enrichment:
+  date: '2026-08-01'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+  note: 'No API surface. Contract discovery (OpenAPI/GraphQL/MCP/A2A/.well-known) probed exhaustively
+    across every jetzero.aero host and missed; only probed domain-security, a negative well-known record,
+    and a generated llms.txt were produced.'
