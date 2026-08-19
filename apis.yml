@@ -30,7 +30,7 @@ x-source: harvest:secondary-market
 x-source-url: https://forgeglobal.com/jetzero_stock/
 x-tier: stub
 x-tier-reason: no-public-api
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-08-01'
 modified: '2026-08-01'
 tags:
