@@ -11,6 +11,17 @@ description: 'JetZero is a Long Beach, California aerospace company founded in 2
   Airlines. JetZero is an aircraft manufacturer, not a software or data provider: as of this profile it
   publishes no public developer portal, no API documentation, no SDKs, and no machine-readable API contract
   of any kind. Its public technical surface is a supplier registration and supplier standards program.'
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: none
   onboarding: none
