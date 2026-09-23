@@ -6,21 +6,6 @@ hits: 0
 note: JetZero publishes no /.well-known/ discovery surface. Every RFC 8615 path probed on both the apex
   and www hosts returned 404. No WellKnown or SecurityTxt pointer is wired in apis.yml because no document
   was found — recording the negative result so later rounds do not re-probe blind.
-documents:
-- path: /.well-known/security.txt
-  status: 404
-- path: /.well-known/openid-configuration
-  status: 404
-- path: /.well-known/oauth-authorization-server
-  status: 404
-- path: /.well-known/api-catalog
-  status: 404
-- path: /.well-known/ai-plugin.json
-  status: 404
-- path: /.well-known/agent-card.json
-  status: 404
-- path: /.well-known/agent.json
-  status: 404
 hosts_probed:
 - host: www.jetzero.aero
   resolves: true
@@ -40,5 +25,27 @@ hosts_probed:
 x-evidence:
   fetched: '2026-08-01'
   method: curl HTTPS HEAD/GET with redirects
-  dns_scan: 'api, app, portal, status, my, supplier, suppliers, data, dev, developers, graphql, mcp,
-    partners — none resolve under jetzero.aero'
+  dns_scan: api, app, portal, status, my, supplier, suppliers, data, dev, developers, graphql, mcp, partners
+    — none resolve under jetzero.aero
+hosts:
+- host: https://www.jetzero.aero
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
